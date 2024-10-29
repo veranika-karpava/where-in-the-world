@@ -17,7 +17,6 @@ body {
 
 h1 {
     font-weight: ${fontWeight.extraBold};
-    font-size: ${fontSize.logo};
 }
 
 h2 {

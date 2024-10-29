@@ -1,11 +1,13 @@
 export const lightTheme  = {
     background: 'hsl(0, 0%, 98%)',
-    backgroundHeader: 'hsl(0, 0%, 100%)',
+    backgroundComponent: 'hsl(0, 0%, 100%)',
+    boxShadowColor: 'hsl(0, 0%, 90%)',
     color: 'hsl(200, 15%, 8%)',
 };
 
 export const darkTheme  = {
-    background: 'hsl(207, 26%, 17%)',
-    backgroundHeader: 'hsl(209, 23%, 22%)',
+    background: 'hsl(207, 26%, 17%)', // main
+    backgroundComponent: 'hsl(209, 23%, 22%)', // header, cart, input
+    boxShadowColor: 'hsl(207, 26%, 10%)',
     color: 'hsl(0, 0%, 100%)',
 };
