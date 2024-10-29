@@ -1,11 +1,14 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
+import { MdDarkMode, MdOutlineLightMode  } from "react-icons/md";
 
 import { spacePadding, breakpoints, fontSize  } from '../styles/stylesLib.js';
 
 
 import { ModeContext } from '../store/mode-context.jsx';
-import { LOGO_NAME, LABEL_MODE,  LABEL_BUTTON_MODE } from '../constans.js'
+import { LOGO_NAME, LABEL_MODE,  LABEL_BUTTON_MODE } from '../constans.js';
+
+import Button from './UI/Button.jsx';
 
 const StyledHeader = styled.header`
     padding: ${spacePadding.medium} ${spacePadding.extraLarge};
@@ -17,7 +20,6 @@ const StyledHeader = styled.header`
 
     @media screen and (max-width: ${breakpoints.sm}) {
         padding: ${spacePadding.medium};
-        flex-direction: column;
         gap: ${spacePadding.small};
     }
 `
@@ -27,13 +29,19 @@ const Logo = styled.h1`
         font-size: ${fontSize.secondary};
     }
 `
+
 const Header = () => {
     const modeCtx = useContext(ModeContext);
 
     return (
         <StyledHeader>
             <Logo>{LOGO_NAME.TEXT}</Logo>
-            <button onClick={modeCtx.toggleMode}>{modeCtx.mode === LABEL_MODE.LIGHT ? LABEL_BUTTON_MODE.LIGHT_MODE : LABEL_BUTTON_MODE.DARK_DARL}</button>
+            <Button 
+                icon={modeCtx.mode === LABEL_MODE.LIGHT ? MdOutlineLightMode : MdDarkMode} 
+                onClick={modeCtx.toggleMode}
+                >
+                    {modeCtx.mode === LABEL_MODE.LIGHT ? LABEL_BUTTON_MODE.LIGHT_MODE : LABEL_BUTTON_MODE.DARK_DARL}
+                </Button>
         </StyledHeader>
     );
 };
