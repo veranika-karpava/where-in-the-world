@@ -3,6 +3,7 @@ export const lightTheme  = {
     backgroundComponent: 'hsl(0, 0%, 100%)',
     boxShadowColor: 'hsl(0, 0%, 90%)',
     color: 'hsl(200, 15%, 8%)',
+    searchColor: 'hsl(0, 0%, 52%)',
 };
 
 export const darkTheme  = {
@@ -10,4 +11,5 @@ export const darkTheme  = {
     backgroundComponent: 'hsl(209, 23%, 22%)', // header, cart, input
     boxShadowColor: 'hsl(207, 26%, 10%)',
     color: 'hsl(0, 0%, 100%)',
+    searchColor: 'hsl(0, 0%, 100%)',
 };

@@ -1,4 +1,3 @@
-
 import ModeContextProvider from './store/mode-context.jsx';
 
 import AppWrapper from './components/AppWrapper.jsx';
