@@ -1,8 +1,6 @@
 
 import styled from 'styled-components';
 
-import { spacePadding, breakpoints } from '../styles/stylesLib.js';
-
 import { getRandomNumber } from '../utils/utils.js';
 
 import CardItem from './CardItem.jsx'
@@ -15,8 +13,6 @@ const List = styled.ul`
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: ${spacePadding.small};
-    padding: ${spacePadding.medium} ${spacePadding.extraLarge};
 `
 
 

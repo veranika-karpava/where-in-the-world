@@ -20,8 +20,6 @@ const AppWrapper = () => {
 
     const [countries, setCountries] = useState(DUMMY_DATA);
 
-
-
     return (
         <ThemeProvider theme={currentTheme}>
             <GlobalStyle />

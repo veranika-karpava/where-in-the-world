@@ -20,7 +20,7 @@ export const spacePadding = {
     small: '0.5rem',
     medium: '1rem',
     large: '1.25rem',
-    extraLarge: '2rem'
+    extraLarge: '2rem',
 };
 
 
