@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-import { getRandomNumber } from '../utils/utils.js';
+import { v4 as uuidv4 } from 'uuid';
 
 import CardItem from './CardItem.jsx'
 
@@ -9,7 +9,7 @@ import CardItem from './CardItem.jsx'
 const List = styled.ul`
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@ const Cards = ({ countries }) => {
 
     return (
         <List>
-            {countries.map((country) => <CardItem key={getRandomNumber(100000)} country={country} />)}
+            {countries.map((country) => <CardItem key={uuidv4()} country={country} />)}
         </List>
     );
 };

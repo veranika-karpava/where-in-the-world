@@ -6,7 +6,7 @@ import { spacePadding, breakpoints, fontSize  } from '../styles/stylesLib.js';
 
 
 import { ModeContext } from '../store/mode-context.jsx';
-import { LOGO_NAME, LABEL_MODE,  LABEL_BUTTON_MODE } from '../constans.js';
+import { LOGO_NAME, LABEL_MODE,  LABEL_BUTTON_MODE } from '../constants.js';
 
 import Button from './UI/Button.jsx';
 

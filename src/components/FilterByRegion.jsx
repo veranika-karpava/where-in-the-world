@@ -5,7 +5,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 import { spacePadding, fontSize } from '../styles/stylesLib.js';
 
-import { REGIONS, LABEL_FILTER } from '../constans';
+import { REGIONS, LABEL_FILTER } from '../constants.js';
 
 const DropdownContainer = styled.div `
     position: relative;

@@ -1,13 +1,13 @@
 import { createContext, useState } from 'react';
 
-import { LABEL_MODE } from '../constans.js'
+import { LABEL_MODE } from '../constants.js';
 
-export const ModeContext = createContext({
+const ModeContext = createContext({
     mode: '',
     toggleMode: () => {},
 });
 
-export default function ModeContextProvider ({ children }) {
+const ModeContextProvider =  ({ children }) => {
     const [ theme, setTheme ] = useState(LABEL_MODE.LIGHT);
 
     const handleToggleTheme = () => {
@@ -23,3 +23,5 @@ export default function ModeContextProvider ({ children }) {
             {children}
         </ModeContext.Provider>
 };
+
+export { ModeContext, ModeContextProvider };

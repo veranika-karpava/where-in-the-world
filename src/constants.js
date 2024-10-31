@@ -1,4 +1,4 @@
-import { getRandomNumber } from "./utils/utils";
+import { v4 as uuidv4 } from 'uuid';
 
 export const LOGO_NAME = {
     TEXT: 'Where in the world',
@@ -22,29 +22,35 @@ export const LABEL_FILTER = {
     TEXT: 'Filter by Region',
 };
 
+export const LABEL_CARD = {
+    POPULATION: 'Population:',
+    REGION: 'Region:',
+    CAPITAL: 'Capital:'
+};
+
 export const REGIONS = [
     {
-        ID: getRandomNumber(100),
+        ID: uuidv4(),
         LABEL: 'All'
     },
     {
-        ID: getRandomNumber(100),
+        ID: uuidv4(),
         LABEL: 'Africa'
     },
     {
-        ID: getRandomNumber(100),
+        ID: uuidv4(),
         LABEL: 'America'
     },
     {
-        ID: getRandomNumber(100),
+        ID: uuidv4(),
         LABEL: 'Asia'
     },
     {
-        ID: getRandomNumber(100),
+        ID: uuidv4(),
         LABEL: 'Europe'
     },
     {
-        ID: getRandomNumber(100),
+        ID: uuidv4(),
         LABEL: 'Oceania'
     },
 ]

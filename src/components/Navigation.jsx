@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-import { LABEL_SEARCH } from '../constans.js';
+import { LABEL_SEARCH } from '../constants.js';
 
 import { spacePadding, breakpoints} from '../styles/stylesLib.js';
 

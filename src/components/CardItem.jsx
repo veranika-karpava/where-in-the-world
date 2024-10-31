@@ -1,7 +1,10 @@
 
 import styled from 'styled-components';
 
-import { spacePadding } from '../styles/stylesLib.js';
+import { LABEL_CARD } from '../constants.js';
+import { formattedPopulation } from '../utils/utils.js';
+
+import { spacePadding, fontWeight } from '../styles/stylesLib.js';
 
 const ListItem = styled.li`
     width: 15%;
@@ -31,6 +34,10 @@ const Image = styled.img`
 const ContentContainer = styled.div`
     height: 150px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    flex-direction: column;
     padding: ${spacePadding.medium} ${spacePadding.extraLarge};
 `
 const StyledTitle = styled.h2`
@@ -42,8 +49,7 @@ const StyledContentWrapper = styled.p`
 
 `
 const StyledTitleParam = styled.span`
-
-
+   font-weight: ${fontWeight.extraBold};
 `
 
 
@@ -51,19 +57,27 @@ const StyledTitleParam = styled.span`
 
 const CardItem = ({ country }) => {
 
-    console.log(country)
+    const handleOpenModal = () =>{
+        console.log("It's open modal")
+    };
     
     return (
-        <ListItem>
+        <ListItem onClick={handleOpenModal}>
             <Image src={country.flag} alt={`${country.name} flag`}/>
             <ContentContainer>
                 <StyledTitle>{country.name}</StyledTitle>
                 <StyledContentWrapper>
-                    <StyledTitleParam>Population: </StyledTitleParam>
-                    {country.population}
+                    <StyledTitleParam>{LABEL_CARD.POPULATION} </StyledTitleParam>
+                    {formattedPopulation(country.population)}
                 </StyledContentWrapper>
-                <StyledContentWrapper>{`Region: ${country.region}`}</StyledContentWrapper>
-                <StyledContentWrapper>{`Capital: ${country.capital}`}</StyledContentWrapper>
+                <StyledContentWrapper>
+                    <StyledTitleParam>{LABEL_CARD.REGION} </StyledTitleParam>
+                    {country.region}
+                </StyledContentWrapper>
+                <StyledContentWrapper>
+                    <StyledTitleParam>{LABEL_CARD.CAPITAL} </StyledTitleParam>
+                    {country.capital}
+                </StyledContentWrapper>
             </ContentContainer>
         </ListItem> 
     );
