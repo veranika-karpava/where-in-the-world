@@ -25,7 +25,6 @@ export const useHttp = (fetchFn, initialValue) => {
     return {
         isLoading,
         error,
-        fetchedData,
-        setFetchedData,
+        fetchedData
     }
-}
+};

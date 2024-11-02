@@ -4,6 +4,7 @@ export const lightTheme  = {
     boxShadowColor: 'hsl(0, 0%, 90%)',
     color: 'hsl(200, 15%, 8%)',
     searchColor: 'hsl(0, 0%, 52%)',
+    backDropColor: 'hsl(207, 26%, 17%)',
 };
 
 export const darkTheme  = {
@@ -12,4 +13,5 @@ export const darkTheme  = {
     boxShadowColor: 'hsl(207, 26%, 10%)',
     color: 'hsl(0, 0%, 100%)',
     searchColor: 'hsl(0, 0%, 100%)',
+    backDropColor: 'hsl(0, 0%, 98%)',
 };

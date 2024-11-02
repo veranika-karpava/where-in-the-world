@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 
 import { spacePadding, fontWeight } from '../styles/stylesLib.js';
@@ -18,7 +17,8 @@ const ListItem = styled.li`
     overflow: hidden;
     transition: transform 0.3s ease;
     margin: ${spacePadding.extraLarge};
-
+    cursor: pointer;
+    
     &:hover {
         transform: translateY(-5px);
     }
@@ -52,14 +52,13 @@ const StyledTitleParam = styled.span`
    font-weight: ${fontWeight.extraBold};
 `;
 
-const CardItem = ({ country }) => {
-
-    const handleOpenModal = () =>{
-        console.log("It's open modal")
+const CardItem = ({ country, onSelect }) => {
+    const handleOpenModal = (name) =>{
+        onSelect(name);
     };
     
     return (
-        <ListItem onClick={handleOpenModal}>
+        <ListItem onClick={()=>handleOpenModal(country.name?.common)}>
             <Image src={country.flags?.png} alt={country.flags?.alt}/>
             <ContentContainer>
                 <StyledTitle>{country.name?.common}</StyledTitle>

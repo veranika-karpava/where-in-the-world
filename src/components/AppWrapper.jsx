@@ -20,8 +20,6 @@ const AppWrapper = () => {
 
     const { isLoading, error, fetchedData: allCountries } = useHttp(fetchCountries, []);
 
-    console.log('allCountries!', allCountries);
-
     const [ filteredCountries, setFilteredCountries ] = useState([]);
     const [ searchTerm, setSearchTerm ] = useState('');
     const [ filterTerm, setFilterTerm ] = useState(REGIONS[0].LABEL);

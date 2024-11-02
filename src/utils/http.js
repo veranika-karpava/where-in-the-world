@@ -4,12 +4,18 @@ export const fetchCountries = async () => {
 
     if(!response.ok){ 
         throw new Error('Failed to fetch countries');
-      }; 
-      
-      return resData;
+    }; 
+    
+    return resData;
 };
 
+export const fetchCountry = async (name) => {
+    const response  = await fetch(`https://restcountries.com/v3.1/name/${name}?fields=fields=name,tld,capital,region,subregion,languages,borders,populaton,flags,currencies`);
+    const resData = await response.json();
 
-export const fetchCountry = async () => {
-    
+    if(!response.ok){ 
+        throw new Error('Failed to fetch country');
+    }; 
+
+    return resData;
 };
