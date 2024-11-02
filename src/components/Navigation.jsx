@@ -23,12 +23,12 @@ const NavContainer = styled.div`
   }
 `
 
-const Navigation = () => {
+const Navigation = ({ onFilter, ...props }) => {
   
     return (
         <NavContainer>
-          <SearchCountry type='text' placeholder={LABEL_SEARCH.TEXT}/>
-          <FilterByRegion />
+          <SearchCountry type='text' placeholder={LABEL_SEARCH.TEXT} {...props}/>
+          <FilterByRegion onFilter={onFilter}/>
         </NavContainer>
     );
 };

@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import { MdSearch } from "react-icons/md";
@@ -43,11 +44,16 @@ const SearcInput = styled.input `
     }
 `
 
-const SearchCountry = ({...props}) => {
+const SearchCountry = ({ onSearch, searchTerm,  ...props }) => {
+
+    const handleSearchChange = (e) => {
+        onSearch(e.target.value);
+    };
+
     return (
         <SearchWrapper>
             <SearcIcon/>
-            <SearcInput {...props} />
+            <SearcInput value={searchTerm} onChange={handleSearchChange} {...props} />
         </SearchWrapper>
     );
 };

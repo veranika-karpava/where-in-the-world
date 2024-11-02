@@ -1,10 +1,9 @@
 
 import styled from 'styled-components';
 
+import { spacePadding, fontWeight } from '../styles/stylesLib.js';
 import { LABEL_CARD } from '../constants.js';
 import { formattedPopulation } from '../utils/utils.js';
-
-import { spacePadding, fontWeight } from '../styles/stylesLib.js';
 
 const ListItem = styled.li`
     width: 15%;
@@ -28,7 +27,7 @@ const ListItem = styled.li`
 const Image = styled.img`
     height: 150px;
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
 `;
 
 const ContentContainer = styled.div`
@@ -39,21 +38,19 @@ const ContentContainer = styled.div`
     align-items:flex-start;
     flex-direction: column;
     padding: ${spacePadding.medium} ${spacePadding.extraLarge};
-`
+`;
+
 const StyledTitle = styled.h2`
     margin-bottom: ${spacePadding.medium};
 `;
 
 const StyledContentWrapper = styled.p`
     width: 100%;
+`;
 
-`
 const StyledTitleParam = styled.span`
    font-weight: ${fontWeight.extraBold};
-`
-
-
-
+`;
 
 const CardItem = ({ country }) => {
 
@@ -63,12 +60,12 @@ const CardItem = ({ country }) => {
     
     return (
         <ListItem onClick={handleOpenModal}>
-            <Image src={country.flag} alt={`${country.name} flag`}/>
+            <Image src={country.flags?.png} alt={country.flags?.alt}/>
             <ContentContainer>
-                <StyledTitle>{country.name}</StyledTitle>
+                <StyledTitle>{country.name?.common}</StyledTitle>
                 <StyledContentWrapper>
                     <StyledTitleParam>{LABEL_CARD.POPULATION} </StyledTitleParam>
-                    {formattedPopulation(country.population)}
+                    {formattedPopulation(country?.population)}
                 </StyledContentWrapper>
                 <StyledContentWrapper>
                     <StyledTitleParam>{LABEL_CARD.REGION} </StyledTitleParam>
@@ -76,7 +73,7 @@ const CardItem = ({ country }) => {
                 </StyledContentWrapper>
                 <StyledContentWrapper>
                     <StyledTitleParam>{LABEL_CARD.CAPITAL} </StyledTitleParam>
-                    {country.capital}
+                    {country.capital[0]}
                 </StyledContentWrapper>
             </ContentContainer>
         </ListItem> 

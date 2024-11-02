@@ -39,7 +39,7 @@ export const REGIONS = [
     },
     {
         ID: uuidv4(),
-        LABEL: 'America'
+        LABEL: 'Americas'
     },
     {
         ID: uuidv4(),
@@ -54,3 +54,11 @@ export const REGIONS = [
         LABEL: 'Oceania'
     },
 ]
+
+export const LABEL_LOADING = {
+    LOADING: 'Loading...',
+    ERROR:'Oppps... Something went wrong.',
+    SEARCH:'Oppps... Nothing was found.',
+    FILTER:'Oppps... Nothing was found.',
+    EMPTY:'Opps... List is empty.'
+}

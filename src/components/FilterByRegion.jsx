@@ -65,7 +65,7 @@ const DropdownItem = styled.li`
     }
 `;
 
-const FilterByRegion = () => {
+const FilterByRegion = ({ onFilter }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -73,6 +73,7 @@ const FilterByRegion = () => {
 
     const handleOptionClick = (option) => {
         setSelectedOption(option);
+        onFilter(option);
         setIsOpen(false);
     };
 
@@ -84,13 +85,13 @@ const FilterByRegion = () => {
     return (
         <DropdownContainer>
             <Selected onClick={toggleDropdown}>
-                {selectedOption ? selectedOption.LABEL : LABEL_FILTER.TEXT}
+                {selectedOption ? selectedOption : LABEL_FILTER.TEXT}
                 {iconMap[isOpen]}
             </Selected>
             {isOpen && (
                 <DropdownList>
                     {REGIONS.map((region) => (
-                        <DropdownItem key={region.ID} onClick={() => handleOptionClick(region)}>
+                        <DropdownItem key={region.ID} onClick={() => handleOptionClick(region.LABEL)}>
                             {region.LABEL}
                         </DropdownItem>
                     ))}
