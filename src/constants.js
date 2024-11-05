@@ -58,7 +58,9 @@ export const REGIONS = [
 export const LABEL_LOADING = {
     LOADING: 'Loading...',
     ERROR:'Oppps... Something went wrong.',
-    SEARCH:'Oppps... Nothing was found.',
-    FILTER:'Oppps... Nothing was found.',
     EMPTY:'Opps... List is empty.'
+};
+
+export const URL_ALL = {
+    TEXT: 'https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags',
 }
