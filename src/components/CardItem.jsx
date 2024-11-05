@@ -53,6 +53,7 @@ const StyledTitleParam = styled.span`
 `;
 
 const CardItem = ({ country, onSelect }) => {
+    
     const handleOpenModal = (name) =>{
         onSelect(name);
     };

@@ -13,12 +13,13 @@ import Navigation from './Navigation.jsx';
 import Cards from './Cards.jsx';
 import Loading from './UI/Loading.jsx';
 
+const URL = URL_ALL.TEXT;
+
 const AppWrapper = () => {
     const modeCtx = useContext(ModeContext);
     const currentTheme = modeCtx.mode === LABEL_MODE.LIGHT ? lightTheme : darkTheme;
 
-    const { isLoading, error, fetchedData: allCountries } = useHttp(URL_ALL.TEXT, []);
-
+    const { isLoading, error, fetchedData: allCountries } = useHttp(URL, []);
     const [ searchTerm, setSearchTerm ] = useState('');
     const [ filterTerm, setFilterTerm ] = useState(REGIONS[0].LABEL);
 

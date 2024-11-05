@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -23,8 +23,8 @@ const Cards = ({ countries }) => {
     const [ isOpenModal, setIsOpenModal ] = useState(false);
     const [ url, setUrl ] = useState(null);
 
-    // const { isLoading, error, fetchedData: detailedCountry } = useHttp(url, []);
-    console.log("Cards component rendered")
+    const { isLoading, error, fetchedData: detailedCountry, setFetchedData: setDetailedCountry } = useHttp(url, []);
+    console.log("Cards component rendered");
 
     const handleOnSelect = (name) =>{
         const updatedUrl = `https://restcountries.com/v3.1/name/${name.toLowerCase().trim()}?fields=name,tld,capital,region,subregion,languages,borders,populaton,flags,currencies`
@@ -34,6 +34,7 @@ const Cards = ({ countries }) => {
 
     const handleCloseModal = () => {
         setIsOpenModal(false);
+        setDetailedCountry([])
     }
 
     if(countries.length === 0) {
@@ -43,9 +44,9 @@ const Cards = ({ countries }) => {
     return (
         <>
             <Modal open={isOpenModal}>
-                {/* {isLoading && <Loading>{LABEL_LOADING.LOADING}</Loading>}
+                {isLoading && <Loading>{LABEL_LOADING.LOADING}</Loading>}
                 {error && <Loading>{LABEL_LOADING.ERROR}</Loading>}
-                {detailedCountry.length !== 0 && <DetailedCountry country={detailedCountry} onClose={handleCloseModal}/>}  */}
+                {detailedCountry.length !== 0 && <DetailedCountry country={detailedCountry} onClose={handleCloseModal}/>} 
             </Modal>
             <List>
                 {countries.map((country) => <CardItem key={uuidv4()} country={country} onSelect={handleOnSelect}/>)}

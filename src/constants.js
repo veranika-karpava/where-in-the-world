@@ -14,6 +14,10 @@ export const LABEL_BUTTON_MODE = {
     DARK_DARL: 'Dark Mode',
 };
 
+export const LABEL_BUTTON = {
+    CLOSE: "Close"
+}
+
 export const LABEL_SEARCH = {
     TEXT: 'Search for a country...',
 };

@@ -2,7 +2,7 @@ import {  useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 
-import { spacePadding } from '../../styles/stylesLib';
+import { spacePadding, breakpoints } from '../../styles/stylesLib';
 
 const ModalWrapper = styled.dialog`
     background-color: ${({ theme }) => theme.backgroundComponent};
@@ -12,11 +12,21 @@ const ModalWrapper = styled.dialog`
     outline: none;
     padding: ${spacePadding.medium};
     width: 80%;
-    max-width: 40rem;
+    max-width: 50rem;
+    height: 30rem;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
+
+    @media screen and (max-width: ${breakpoints.md}) {
+      width: 100%;
+      height: 100%;
+      max-width: unset;
+      max-height: unset;
+      border-radius: unset;
+      box-shadow: unset;
+    }
 
     &::backdrop {
         background-color: ${({ theme }) => theme.backDropColor};
