@@ -27,9 +27,15 @@ export const LABEL_FILTER = {
 };
 
 export const LABEL_CARD = {
-    POPULATION: 'Population:',
-    REGION: 'Region:',
-    CAPITAL: 'Capital:'
+    POPULATION: 'Population: ',
+    REGION: 'Region: ',
+    CAPITAL: 'Capital: ',
+    NATIVE_NAME: 'Native Name: ',
+    SUB_REGION: 'Sub Region: ',
+    TOP_LEVEL_DOMAIN: 'Top Level Domain: ',
+    CURRENCIES: 'Currencies: ',
+    LANGUAGES: 'Languages: ',
+    BORDER_COUNTRIES: 'Border Countries: '
 };
 
 export const REGIONS = [

@@ -27,7 +27,7 @@ const Cards = ({ countries }) => {
     console.log("Cards component rendered");
 
     const handleOnSelect = (name) =>{
-        const updatedUrl = `https://restcountries.com/v3.1/name/${name.toLowerCase().trim()}?fields=name,tld,capital,region,subregion,languages,borders,populaton,flags,currencies`
+        const updatedUrl = `https://restcountries.com/v3.1/name/${name.toLowerCase().trim()}?fields=name,tld,capital,region,subregion,languages,borders,population,flags,currencies`
         setUrl(updatedUrl);
         setIsOpenModal(true);
     };
