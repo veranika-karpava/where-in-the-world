@@ -1,10 +1,13 @@
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
 
-import { spacePadding, breakpoints, fontWeight } from '../styles/stylesLib.js';
-import { LABEL_BUTTON, LABEL_CARD } from '../constants.js';
+import { spacePadding, breakpoints } from '../styles/stylesLib.js';
+import { LABEL_BUTTON } from '../constants.js';
 import { formattedDetailsCountry } from '../utils/utils.js';
 
 import Button from './UI/Button';
+import CountryContent from './UI/CountryContent.jsx';
+import Borders from './UI/Borders.jsx';
 
 const MainCoontainer = styled.div`
     display: flex;
@@ -48,7 +51,6 @@ const DetailedContainer = styled.div`
 
 const StyledImage = styled.img`
     width: 100%;
-    height: 80%;
     object-fit: cover;
     display: block;
 `;
@@ -58,13 +60,15 @@ const CountryName = styled.h1`
     margin-bottom: ${spacePadding.medium};
 `;
 
-const DetailedCountry = ({country, onClose}) => {
-    const {flagInfo, nameInfo, firstInfo, secondInfo, borders} = formattedDetailsCountry(country)
+const DetailedContainerContent = styled.div`
+    width: 100%;
+`;
 
-console.log(flagInfo);
-console.log(nameInfo);
-console.log(firstInfo);
-console.log(secondInfo);
+const DetailedCountry = ({country, onClose}) => {
+
+    if (country.length === 0) return;
+
+    const {flagInfo, nameInfo, firstInfo, borders} = formattedDetailsCountry(country)
 
 console.log(borders)
 
@@ -80,7 +84,10 @@ console.log(borders)
                 </DetailedContainer>
                 <DetailedContainer>
                     <CountryName>{nameInfo.name}</CountryName>
-
+                    <DetailedContainerContent>
+                        {firstInfo.map((item) => <CountryContent key={uuidv4()} label={item.label} value={item.text}/>)}
+                    </DetailedContainerContent>
+                    {borders.text.length > 0 && <Borders label={borders.label} value={borders.text}/>}
                 </DetailedContainer>
             </ContentContainer>
 

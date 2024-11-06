@@ -47,9 +47,6 @@ export const formattedDetailsCountry = (detailsCountry) => {
             label: LABEL_CARD.CAPITAL,
             text: country.capital[0],
         },
-    ];
-
-    const secondInfo = [
         {
             label: LABEL_CARD.TOP_LEVEL_DOMAIN,
             text: country.tld[0],
@@ -73,7 +70,6 @@ export const formattedDetailsCountry = (detailsCountry) => {
         flagInfo,
         nameInfo,
         firstInfo,
-        secondInfo,
         borders
     };
 

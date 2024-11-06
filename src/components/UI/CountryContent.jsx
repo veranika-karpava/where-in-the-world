@@ -1,19 +1,23 @@
-// import React from 'react';
+import styled from 'styled-components';
 
-// const StyledContentWrapper = styled.p`
-//     width: 100%;
-// `;
+import { fontWeight, spacePadding } from '../../styles/stylesLib.js';
 
-// const StyledTitleParam = styled.span`
-//    font-weight: ${fontWeight.extraBold};
-// `;
+const StyledContentWrapper = styled.p`
+    width: 100%;
+    padding-bottom: ${spacePadding.small};
+`;
 
-// const CountryContent = () => {
-//     return (
-//         <div>
-            
-//         </div>
-//     );
-// };
+const StyledTitleParam = styled.span`
+   font-weight: ${fontWeight.extraBold};
+`;
 
-// export default CountryContent;
+const CountryContent = ({label, value}) => {
+    return (
+        <StyledContentWrapper>
+            <StyledTitleParam>{label}</StyledTitleParam>
+            {value}
+        </StyledContentWrapper>
+    );
+};
+
+export default CountryContent;
