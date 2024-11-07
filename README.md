@@ -3,7 +3,7 @@
 "Where In The World" is a fully responsive web application that lets users explore a list of countries worldwide and view detailed information for each one.
 
 # Purpose:
-* "Where In The World" offers users an easy, enjoyable way to explore and learn about countries around the globe, celebrating the diversity of our world.
+"Where In The World" offers users an easy, enjoyable way to explore and learn about countries around the globe, celebrating the diversity of our world.
 
 # Current functionality:
 * toggle dark/light mode for a personalized viewing experience
