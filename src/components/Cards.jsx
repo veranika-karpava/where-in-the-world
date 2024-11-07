@@ -34,7 +34,7 @@ const Cards = ({ countries }) => {
 
     const handleCloseModal = () => {
         setIsOpenModal(false);
-        setDetailedCountry([])
+        setDetailedCountry([]);
     }
 
     if(countries.length === 0) {

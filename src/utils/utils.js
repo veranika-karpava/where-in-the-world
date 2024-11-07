@@ -14,19 +14,19 @@ const convertCountryCodesToNames = (codesCountries) => {
     return codesCountries.map(codeCountry => ISO3166.whereAlpha3(codeCountry).country || codeCountry);
 };
 
-export const formattedDetailsCountry = (detailsCountry) => {
-    const country = detailsCountry[0];
+export const formattedDetailsCountry = (countryParam) => {
+    const country = countryParam[0];
 
-    const flagInfo = {
+    const flagCountry = {
         url: country.flags?.svg,
         alt: country.flags?.alt
     };
 
-    const nameInfo = {
+    const nameCountry = {
         name: country.name?.common
     };
 
-    const firstInfo = [
+    const detailsCountry = [
         {
             label: LABEL_CARD.NATIVE_NAME,
             text: getFirstValue(country.name?.nativeName, 'common'),
@@ -61,18 +61,17 @@ export const formattedDetailsCountry = (detailsCountry) => {
         }
     ];
 
-    const borders = {
+    const bordersCountry = {
         label: LABEL_CARD.BORDER_COUNTRIES,
         text: convertCountryCodesToNames(country.borders),
     };
 
     const data = {
-        flagInfo,
-        nameInfo,
-        firstInfo,
-        borders
+        flagCountry,
+        nameCountry,
+        detailsCountry,
+        bordersCountry,
     };
-
 
     return data;
 };

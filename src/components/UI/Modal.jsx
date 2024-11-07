@@ -12,8 +12,6 @@ const ModalWrapper = styled.dialog`
     outline: none;
     padding: ${spacePadding.medium};
     width: 80%;
-    max-width: 50rem;
-    height: 30rem;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -32,7 +30,8 @@ const ModalWrapper = styled.dialog`
         background-color: ${({ theme }) => theme.backDropColor};
         opacity: 0.9;
     }
-`
+`;
+
 const Modal = ({ children, open }) => {
     const dialog = useRef();
 

@@ -4,7 +4,6 @@ import { MdDarkMode, MdOutlineLightMode  } from "react-icons/md";
 
 import { spacePadding, breakpoints, fontSize  } from '../styles/stylesLib.js';
 
-
 import { ModeContext } from '../store/mode-context.jsx';
 import { LOGO_NAME, LABEL_MODE,  LABEL_BUTTON_MODE } from '../constants.js';
 
@@ -28,7 +27,7 @@ const Logo = styled.h1`
     @media screen and (max-width: ${breakpoints.sm}) {
         font-size: ${fontSize.secondary};
     }
-`
+`;
 
 const Header = () => {
     const modeCtx = useContext(ModeContext);

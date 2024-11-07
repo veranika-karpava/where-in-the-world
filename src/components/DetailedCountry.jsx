@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MdClose } from "react-icons/md";
 import { v4 as uuidv4 } from 'uuid';
 
 import { spacePadding, breakpoints } from '../styles/stylesLib.js';
@@ -9,20 +10,28 @@ import Button from './UI/Button';
 import CountryContent from './UI/CountryContent.jsx';
 import Borders from './UI/Borders.jsx';
 
-const MainCoontainer = styled.div`
+const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
-    gap: ${spacePadding.extraLarge};
+    gap: ${spacePadding.medium};
     width: 100%;
     height: 100%;
     padding: ${spacePadding.large};
-`
+    color: ${({ theme }) => theme.color};
+`;
+
 const CloseButton = styled(Button)`
     align-self: flex-start;
+    @media screen and (max-width: ${breakpoints.md}) {
+        padding: ${spacePadding.small};
+        align-self: flex-end;
 
-        @media screen and (max-width: ${breakpoints.sm}) {
+        .button-icon {
+            margin-right: 0;
+        }
+
         span {
-            display: unset;
+            display: none;
         }
     }
 `;
@@ -33,17 +42,16 @@ const ContentContainer = styled.div`
     align-items: flex-start;
     gap: ${spacePadding.small};
     width: 100%;
-    height: 85%;
-
     @media screen and (max-width: ${breakpoints.md}) {
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
+        align-items: center;
         gap: ${spacePadding.extraLarge};
     }
-`
-const DetailedContainer = styled.div`
-    width: 45%;
+`;
 
+const ChildContainer = styled.div`
+    width: 45%;
     @media screen and (max-width: ${breakpoints.md}) {
         width: 100%;
     }
@@ -51,16 +59,25 @@ const DetailedContainer = styled.div`
 
 const StyledImage = styled.img`
     width: 100%;
+    max-width: 320px;
+    max-height: 220px;
     object-fit: cover;
     display: block;
+    @media screen and (max-width: ${breakpoints.md}) {
+        object-fit: fill;
+        margin: 0 auto;
+    }
 `;
 
-const CountryName = styled.h1`
+const Title = styled.h1`
     width: 100%;
     margin-bottom: ${spacePadding.medium};
+    @media screen and (max-width: ${breakpoints.md}) {
+        text-align: center;
+    }
 `;
 
-const DetailedContainerContent = styled.div`
+const SubChildContainer = styled.ul`
     width: 100%;
 `;
 
@@ -68,30 +85,27 @@ const DetailedCountry = ({country, onClose}) => {
 
     if (country.length === 0) return;
 
-    const {flagInfo, nameInfo, firstInfo, borders} = formattedDetailsCountry(country)
-
-console.log(borders)
+    const { flagCountry, nameCountry, detailsCountry, bordersCountry } = formattedDetailsCountry(country);
 
     return (
-        <MainCoontainer>
-            <CloseButton onClick={onClose}>{LABEL_BUTTON.CLOSE}</CloseButton>
+        <MainContainer>
+            <CloseButton onClick={onClose} icon={MdClose}>{LABEL_BUTTON.CLOSE}</CloseButton>
             <ContentContainer>
-                <DetailedContainer>
+                <ChildContainer >
                     <StyledImage 
-                        src={flagInfo.url} 
-                        alt={flagInfo.alt !== "" ? flagInfo.alt: nameInfo.name}
+                        src={flagCountry.url} 
+                        alt={flagCountry.alt !== "" ? flagCountry.alt : nameCountry.name}
                     />
-                </DetailedContainer>
-                <DetailedContainer>
-                    <CountryName>{nameInfo.name}</CountryName>
-                    <DetailedContainerContent>
-                        {firstInfo.map((item) => <CountryContent key={uuidv4()} label={item.label} value={item.text}/>)}
-                    </DetailedContainerContent>
-                    {borders.text.length > 0 && <Borders label={borders.label} value={borders.text}/>}
-                </DetailedContainer>
+                </ChildContainer>
+                <ChildContainer>
+                    <Title>{nameCountry.name}</Title>
+                    <SubChildContainer>
+                        {detailsCountry.map((item) => <CountryContent key={uuidv4()} label={item.label} value={item.text}/>)}
+                    </SubChildContainer>
+                </ChildContainer>
             </ContentContainer>
-
-        </MainCoontainer>
+            {bordersCountry.text.length > 0 && <Borders label={bordersCountry.label} values={bordersCountry .text}/>}
+        </MainContainer>
     );
 };
 
