@@ -23,8 +23,7 @@ const Cards = ({ countries }) => {
     const [ isOpenModal, setIsOpenModal ] = useState(false);
     const [ url, setUrl ] = useState(null);
 
-    const { isLoading, error, fetchedData: detailedCountry, setFetchedData: setDetailedCountry } = useHttp(url, []);
-    console.log("Cards component rendered");
+    const { isLoading, error, fetchedData: detailedCountry } = useHttp(url, []);
 
     const handleOnSelect = (name) =>{
         const updatedUrl = `https://restcountries.com/v3.1/name/${name.toLowerCase().trim()}?fields=name,tld,capital,region,subregion,languages,borders,population,flags,currencies`
@@ -34,8 +33,7 @@ const Cards = ({ countries }) => {
 
     const handleCloseModal = () => {
         setIsOpenModal(false);
-        setDetailedCountry([]);
-    }
+    };
 
     if(countries.length === 0) {
         return <Loading>{LABEL_LOADING.EMPTY}</Loading>
