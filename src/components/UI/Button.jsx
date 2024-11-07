@@ -13,6 +13,7 @@ const StyledButton = styled.button`
     background-color: ${({ theme }) => theme.backgroundComponent};
     color: ${({ theme }) => theme.color};
     transition: background-color 0.3s ease;
+    outline: none;
 
     &:hover {
         background-color: ${({ theme }) => theme.background};
