@@ -1,32 +1,50 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-import { spacePadding } from '../../styles/stylesLib';
+import { fontSize } from '../../styles/stylesLib';
+
+const rotate = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 const LoadingContainer = styled.div`
     width: 100%;
-    height: 100vh;
-    padding: 0 ${spacePadding.extraLarge};
-    margin: ${spacePadding.extraLarge} 0;
+    height: 100%;
+    min-height: 20rem;
+    position: relative;
 `;
 
 const LoadingText = styled.p`
-    width: 100%;
-    height: 100vh; 
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    text-align: center;
-    border-radius: 4px;
-    box-shadow: 0.2rem 0.2rem 1rem ${({ theme }) => theme.boxShadowColor};
-    background-color: ${({ theme }) => theme.backgroundComponent};
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: ${fontSize.logo};
     color: ${({ theme }) => theme.color};
 `;
 
-const Loading = ({ children }) => {
+const Loader = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  border: 8px solid ${({ theme }) => theme.color};
+  border-top: 8px solid ${({ theme }) => theme.boxShadowColor};
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: ${rotate} 2s linear infinite;
+`;
+
+const Loading = ({ children, load }) => {
     return (
         <LoadingContainer>
-            <LoadingText>{children}</LoadingText>
+            {load && <Loader />}
+            {children && <LoadingText>{children}</LoadingText>}
         </LoadingContainer>
     );
 };

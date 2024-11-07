@@ -57,7 +57,7 @@ const AppWrapper = () => {
                 onFilter={handleOnFilter} 
                 searchTerm={searchTerm}
             />
-            {isLoading && <Loading>{LABEL_LOADING.LOADING}</Loading>}
+            {isLoading && <Loading load/>}
             {error && <Loading>{LABEL_LOADING.ERROR}</Loading>}
             <Cards countries={filterCountries}/>
         </ThemeProvider>

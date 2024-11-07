@@ -40,6 +40,5 @@ export const useHttp = (url, initialValue) => {
         isLoading,
         error,
         fetchedData,
-        setFetchedData,
     }
 };

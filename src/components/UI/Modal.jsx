@@ -11,19 +11,23 @@ const ModalWrapper = styled.dialog`
     box-shadow: 0.2rem 0.2rem 1rem ${({ theme }) => theme.boxShadowColor};
     outline: none;
     padding: ${spacePadding.medium};
-    width: 80%;
+    width: 50rem;
+    height: 30rem;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
 
     @media screen and (max-width: ${breakpoints.md}) {
-      width: 100%;
-      height: 100%;
-      max-width: unset;
-      max-height: unset;
-      border-radius: unset;
-      box-shadow: unset;
+        width: 100%;
+        height: 100%;
+        max-width: unset;
+        max-height: unset;
+        border-radius: unset;
+        box-shadow: unset;
+        top: 0; 
+        left: 0;
+        transform: none;
     }
 
     &::backdrop {

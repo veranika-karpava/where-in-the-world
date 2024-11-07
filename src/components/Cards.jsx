@@ -42,7 +42,7 @@ const Cards = ({ countries }) => {
     return (
         <>
             <Modal open={isOpenModal}>
-                {isLoading && <Loading>{LABEL_LOADING.LOADING}</Loading>}
+                {isLoading && <Loading load />}
                 {error && <Loading>{LABEL_LOADING.ERROR}</Loading>}
                 {detailedCountry.length !== 0 && <DetailedCountry country={detailedCountry} onClose={handleCloseModal}/>} 
             </Modal>

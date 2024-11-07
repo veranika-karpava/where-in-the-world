@@ -18,6 +18,7 @@ const MainContainer = styled.div`
     height: 100%;
     padding: ${spacePadding.large};
     color: ${({ theme }) => theme.color};
+    overflow: auto;
 `;
 
 const CloseButton = styled(Button)`
