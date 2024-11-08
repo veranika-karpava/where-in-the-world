@@ -10,6 +10,11 @@ import { LOGO_NAME, LABEL_MODE,  LABEL_BUTTON_MODE } from '../constants.js';
 import Button from './UI/Button.jsx';
 
 const StyledHeader = styled.header`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
     padding: ${spacePadding.medium} ${spacePadding.extraLarge};
     display: flex;
     justify-content: space-between;

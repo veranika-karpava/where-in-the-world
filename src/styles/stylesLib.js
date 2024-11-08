@@ -1,6 +1,7 @@
 export const breakpoints = {
     sm: '375px', // mobile
     md: '768px', // tablet
+    sm_md: '518px', // small tablet
     lg: '1440px', // desktop
 };
 
@@ -21,6 +22,11 @@ export const spacePadding = {
     medium: '1rem',
     large: '1.25rem',
     extraLarge: '2rem',
+};
+
+export const topSpace = {
+    regular: '10rem',
+    small: '13rem',
 };
 
 

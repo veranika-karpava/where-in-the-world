@@ -9,6 +9,10 @@ import SearchCountry from './SearchCountry.jsx';
 import FilterByRegion from "./FilterByRegion.jsx";
 
 const NavContainer = styled.div`
+  position: fixed;
+  top: 34px;
+  left: 0;
+  z-index: 999;
   padding: ${spacePadding.medium} ${spacePadding.extraLarge};
   margin-top: ${spacePadding.extraLarge};
   width: 100%;
@@ -16,6 +20,7 @@ const NavContainer = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: ${spacePadding.medium};
+  background-color: ${({ theme }) => theme.background};
 
   @media screen and (max-width: ${breakpoints.sm}) {
     margin-top: ${spacePadding.medium};

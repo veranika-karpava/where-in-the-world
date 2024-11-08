@@ -2,8 +2,11 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 
+import { breakpoints, topSpace } from '../styles/stylesLib.js';
+
 import { LABEL_LOADING } from '../constants.js';
 import { useHttp } from '../hooks/useHttp.js';
+
 
 import Loading from './UI/Loading.jsx';
 import Modal from './UI/Modal.jsx';
@@ -17,6 +20,11 @@ const List = styled.ul`
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: ${topSpace.regular};
+
+    @media screen and (max-width: ${breakpoints.sm_md}) {
+    margin-top: ${topSpace.small};
+  }
 `;
 
 const Cards = ({ countries }) => {
