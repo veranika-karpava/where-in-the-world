@@ -11,6 +11,7 @@ import { LABEL_MODE, LABEL_LOADING, REGIONS, URL_ALL } from '../constants.js';
 import Header from './Header.jsx';
 import Navigation from './Navigation.jsx';
 import Cards from './Cards.jsx';
+import Footer from './Footer.jsx';
 import Loading from './UI/Loading.jsx';
 
 const URL = URL_ALL.TEXT;
@@ -60,6 +61,7 @@ const AppWrapper = () => {
             {isLoading && <Loading load/>}
             {error && <Loading>{LABEL_LOADING.ERROR}</Loading>}
             <Cards countries={filterCountries}/>
+            <Footer />
         </ThemeProvider>
     );
 };

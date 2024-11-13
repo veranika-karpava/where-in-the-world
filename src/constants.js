@@ -73,4 +73,9 @@ export const LABEL_LOADING = {
 
 export const URL_ALL = {
     TEXT: 'https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags',
-}
+};
+
+export const LABEL_FOOTER = {
+    LABEL_RIGHT: 'Created with ',
+    LABEL_LEFT: ' by Veranika Karpava © 2024'
+};
