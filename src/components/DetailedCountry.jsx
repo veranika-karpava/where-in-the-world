@@ -1,43 +1,21 @@
 import styled from 'styled-components';
-import { MdClose } from "react-icons/md";
 import { v4 as uuidv4 } from 'uuid';
 
 import { spacePadding, breakpoints } from '../styles/stylesLib.js';
-import { LABEL_BUTTON } from '../constants.js';
 import { formattedDetailsCountry } from '../utils/utils.js';
 
-import Button from './UI/Button';
 import CountryContent from './UI/CountryContent.jsx';
 import Borders from './UI/Borders.jsx';
 
 const MainContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: ${spacePadding.medium};
     width: 100%;
-    height: 100%;
-    padding: ${spacePadding.large};
+    max-height: 80%;
     color: ${({ theme }) => theme.color};
-    overflow: auto;
-`;
-
-const CloseButton = styled(Button)`
-    align-self: flex-start;
-    @media screen and (max-width: ${breakpoints.md}) {
-        padding: ${spacePadding.small};
-        align-self: flex-end;
-
-        .button-icon {
-            margin-right: 0;
-        }
-
-        span {
-            display: none;
-        }
-    }
+    overflow-y: auto;
 `;
 
 const ContentContainer = styled.div`
+    margin-bottom: ${spacePadding.extraLarge};
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -82,7 +60,7 @@ const SubChildContainer = styled.ul`
     width: 100%;
 `;
 
-const DetailedCountry = ({country, onClose}) => {
+const DetailedCountry = ({country}) => {
 
     if (country.length === 0) return;
 
@@ -90,7 +68,6 @@ const DetailedCountry = ({country, onClose}) => {
 
     return (
         <MainContainer>
-            <CloseButton onClick={onClose} icon={MdClose}>{LABEL_BUTTON.CLOSE}</CloseButton>
             <ContentContainer>
                 <ChildContainer >
                     <StyledImage 

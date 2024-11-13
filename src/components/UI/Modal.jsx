@@ -10,7 +10,7 @@ const ModalWrapper = styled.dialog`
     border: none;
     box-shadow: 0.2rem 0.2rem 1rem ${({ theme }) => theme.boxShadowColor};
     outline: none;
-    padding: ${spacePadding.medium};
+    padding: ${spacePadding.extraLarge} ${spacePadding.small} ${spacePadding.extraLarge} ${spacePadding.extraLarge};
     width: 50rem;
     height: 30rem;
     position: fixed;

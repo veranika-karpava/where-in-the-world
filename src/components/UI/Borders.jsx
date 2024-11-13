@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { fontWeight, spacePadding, fontSize } from '../../styles/stylesLib.js';
 
 const BordersContainer = styled.div`
+    margin-bottom: ${spacePadding.extraLarge};
     width: 100%;
     display: flex;
     flex-direction: row;
