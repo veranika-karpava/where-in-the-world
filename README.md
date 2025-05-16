@@ -1,29 +1,28 @@
 
-# Where In The World
-"Where In The World" is a fully responsive web application that lets users explore a list of countries worldwide and view detailed information for each one.
+# 🌍 Where In The World
+Where In The World is a fully responsive web application designed to help users explore countries from around the globe with ease. The application allows users to browse a complete list of countries, search by name, filter by region, and view detailed information for each country. It features a modern UI and is optimized for a smooth experience on both desktop and mobile devices.
 
-# Purpose:
-"Where In The World" offers users an easy, enjoyable way to explore and learn about countries around the globe, celebrating the diversity of our world.
+# 🚀 Project Features:
+* Theme Toggle: Switch between light and dark modes to enhance accessibility and reduce visual fatigue across different viewing environments.
+* Browse All Countries: View a complete, scrollable list of countries from around the world.
+* Search by Name: Quickly find any country using a responsive search bar with real-time filtering.
+* Filter by Region: Narrow down the list of countries by selecting a specific geographic region (e.g., Asia, Europe, Africa).
+* Country Details: Click on any country to access detailed information, including population, capital, native name, borders, and more.
 
-# Current functionality:
-* toggle dark/light mode for a personalized viewing experience
-* view a complete list of countries worldwide
-* search for a country by name
-* filter the list by region to narrow down your search
-* access detailed information about each selected country
-
-# Project Tech Stack
+# 🛠️ Tech Stack
 * HTML
 * CSS
 * Styled Components - for CSS-in-JS styling
-* ReactJS - for building a responsive and interactive UI
-* Fetch API - for making HTTP requests to the 3rd party API
-* Context API - for managing global state across components
+* React
+* Context API
+* 3rd party API
+* ESLint
 
-# Usage
-* Clone or download this repository
-* npm install - install all necessary Node modules and dependencies
-* npm run dev - run application in browser
+# 📜 Running the Project
+1. Clone or Download the Repository: clone the repository to your local machine;
+2. Start the application:
+  * **`npm install`**: install necessary dependencies;
+  * **`npm run dev`** - launch the app in your browser;
 
-# Demo
-https://where-in-the-world-vk.netlify.app
+# 🌐 Link to the demo
+🚀 Try it here → [where-in-the-world-vk.netlify.app](https://where-in-the-world-vk.netlify.app)
