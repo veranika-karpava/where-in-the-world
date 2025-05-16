@@ -44,7 +44,7 @@ const Header = () => {
                 icon={modeCtx.mode === LABEL_MODE.LIGHT ? MdOutlineLightMode : MdDarkMode} 
                 onClick={modeCtx.toggleMode}
                 >
-                    {modeCtx.mode === LABEL_MODE.LIGHT ? LABEL_BUTTON_MODE.LIGHT_MODE : LABEL_BUTTON_MODE.DARK_DARL}
+                    {modeCtx.mode === LABEL_MODE.LIGHT ? LABEL_BUTTON_MODE.LIGHT_MODE : LABEL_BUTTON_MODE.DARK_MODE}
                 </Button>
         </StyledHeader>
     );

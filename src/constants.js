@@ -11,7 +11,7 @@ export const LABEL_MODE = {
 
 export const LABEL_BUTTON_MODE = {
     LIGHT_MODE: 'Light Mode',
-    DARK_DARL: 'Dark Mode',
+    DARK_MODE: 'Dark Mode',
 };
 
 export const LABEL_BUTTON = {
@@ -68,7 +68,7 @@ export const REGIONS = [
 export const LABEL_LOADING = {
     LOADING: 'Loading...',
     ERROR:'Oppps... Something went wrong.',
-    EMPTY:'Opps... List is empty.'
+    EMPTY:'Oppps... List is empty.'
 };
 
 export const URL_ALL = {
